@@ -12,11 +12,13 @@ var rootCmd = &cobra.Command{
 	Short: "gogit is a git implementation in pure go",
 	Long:  "",
 	Run: func(cmd *cobra.Command, args []string) {
-
 	},
 }
 
+var Verbose bool
+
 func init() {
+	rootCmd.PersistentFlags().BoolVarP(&Verbose, "verbose", "V", false, "verbose output")
 }
 
 func Execute() {
